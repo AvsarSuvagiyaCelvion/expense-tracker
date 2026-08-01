@@ -52,3 +52,7 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+
+.text-muted {
+  color: var(--text-muted) !important;
+}

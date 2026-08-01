@@ -19,7 +19,7 @@ const ExportPanel = ({ transactions }) => {
 
   return (
     <div className="card export-card mb-4 p-4 shadow-sm border-0">
-      <h5 className="card-title mb-3 d-flex align-items-center text-white">
+      <h5 className="card-title mb-3 d-flex align-items-center">
         <svg className="me-2 text-indigo" width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
         </svg>
@@ -75,7 +75,7 @@ const ExportPanel = ({ transactions }) => {
 
       <div className="d-flex align-items-center justify-content-between mt-3 pt-3 border-top border-separator">
         <span className="small text-muted">
-          Selected: <strong className="text-white">{filteredCount}</strong> {filteredCount === 1 ? 'transaction' : 'transactions'}
+          Selected: <strong>{filteredCount}</strong> {filteredCount === 1 ? 'transaction' : 'transactions'}
         </span>
         <div className="d-flex gap-2">
           <button

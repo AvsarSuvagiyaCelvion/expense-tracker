@@ -24,9 +24,9 @@ const TransactionList = ({ transactions, onDelete, onEdit }) => {
   });
 
   return (
-    <div className="card p-4 shadow-sm border-0">
+    <div className="card p-4 shadow-sm border-0 h-100 d-flex flex-column">
       <div className="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
-        <h5 className="card-title m-0 d-flex align-items-center text-white">
+        <h5 className="card-title m-0 d-flex align-items-center">
           <svg className="me-2 text-indigo" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM3.75 12h.007v.008H3.75V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm-.375 5.25h.007v.008H3.75v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"></path>
           </svg>
@@ -63,14 +63,14 @@ const TransactionList = ({ transactions, onDelete, onEdit }) => {
       </div>
 
       {sorted.length === 0 ? (
-        <div className="text-center py-5 text-muted animate-fade-in">
+        <div className="text-center py-5 text-muted animate-fade-in flex-grow-1 d-flex flex-column justify-content-center align-items-center">
           <svg className="mb-2 text-secondary-label" width="40" height="40" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"></path>
           </svg>
           <p className="m-0">No transactions found.</p>
         </div>
       ) : (
-        <div className="d-flex flex-column gap-3" style={{ maxHeight: '550px', overflowY: 'auto', paddingRight: '4px' }}>
+        <div className="d-flex flex-column gap-3 flex-grow-1" style={{ maxHeight: '550px', overflowY: 'auto', paddingRight: '4px' }}>
           {sorted.map(item => (
             <div
               key={item.id}
@@ -92,7 +92,7 @@ const TransactionList = ({ transactions, onDelete, onEdit }) => {
                     )}
                   </div>
                   <div>
-                    <h6 className="m-0 font-weight-bold text-white">
+                    <h6 className="m-0 font-weight-bold">
                       {item.description || 'No description'}
                     </h6>
                     <div className="d-flex align-items-center gap-2 mt-1">
