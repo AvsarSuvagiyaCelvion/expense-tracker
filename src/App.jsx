@@ -48,6 +48,14 @@ function App() {
   const handleEdit = (id) => {
     const transactionToEdit = transactions.find((transaction) => transaction.id === id);
     setEditableTransaction(transactionToEdit);
+    
+    // Smooth scroll to form for better mobile UX
+    setTimeout(() => {
+      const formElement = document.getElementById('create-form');
+      if (formElement) {
+        formElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 50);
   };
 
   const handleUpdate = (updatedTransaction) => {

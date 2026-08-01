@@ -93,7 +93,7 @@ const CreateForm = ({ onAdd, onUpdate, editable }) => {
   };
 
   return (
-    <div className="card p-3 p-sm-4 shadow-sm mb-4 border-0">
+    <div id="create-form" className="card p-3 p-sm-4 shadow-sm mb-4 border-0">
       <h5 className="card-title mb-3 d-flex align-items-center">
         <svg className="me-2 text-indigo" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15"></path>
