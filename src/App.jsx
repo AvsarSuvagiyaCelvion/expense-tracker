@@ -92,7 +92,7 @@ function App() {
               <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5h.007v.008H3.75V4.5zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM3 16.25h.008v.008H3v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM6 20.25h.008v.008H6v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM21 12c0 1.66-4.03 3-9 3s-9-1.34-9-3m18 0c0-1.66-4.03-3-9-3s-9 1.34-9 3m18 0V4c0-1.66-4.03-3-9-3S3 2.34 3 4v8M3 4c0 1.66 4.03 3 9 3s9-1.34 9-3m-9 15c-1.34 0-2.61-.1-3.79-.29M12 18a9.001 9.001 0 01-9-9"></path>
             </svg>
           </div>
-          <h1 className="brand-title">FinSight</h1>
+          <h1 className="brand-title">Avsar FinSight</h1>
         </div>
         <div className="theme-toggle-container">
           <button
