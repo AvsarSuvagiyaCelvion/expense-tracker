@@ -308,3 +308,29 @@ body:not(.dark-theme) .input-theme {
   color: var(--text-secondary);
   font-weight: 500;
 }
+
+.search-wrapper-responsive {
+  width: 100%;
+}
+
+.select-responsive {
+  width: 100%;
+}
+
+@media (min-width: 576px) {
+  .search-wrapper-responsive {
+    max-width: 300px;
+  }
+  .select-responsive {
+    max-width: 180px;
+  }
+}
+
+@media (max-width: 576px) {
+  .stat-card {
+    padding: 1rem !important;
+  }
+  .stat-value {
+    font-size: 1.35rem !important;
+  }
+}

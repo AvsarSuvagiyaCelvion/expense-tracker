@@ -122,7 +122,7 @@ function App() {
 
           {/* Mini Analytics Panel */}
           {transactions.length > 0 && (
-            <div className="card p-4 border-0 mb-4 shadow-sm animate-fade-in">
+            <div className="card p-3 p-sm-4 border-0 mb-4 shadow-sm animate-fade-in">
               <h5 className="card-title mb-3 d-flex align-items-center">
                 <svg className="me-2 text-indigo" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z"></path>

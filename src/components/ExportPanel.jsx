@@ -18,7 +18,7 @@ const ExportPanel = ({ transactions }) => {
   const filteredCount = filterTransactionsByRange(transactions, rangeType, customStart, customEnd).length;
 
   return (
-    <div className="card export-card mb-4 p-4 shadow-sm border-0">
+    <div className="card export-card mb-4 p-3 p-sm-4 shadow-sm border-0">
       <h5 className="card-title mb-3 d-flex align-items-center">
         <svg className="me-2 text-indigo" width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
@@ -52,7 +52,7 @@ const ExportPanel = ({ transactions }) => {
 
       {rangeType === 'custom' && (
         <div className="row g-2 mb-3 animate-fade-in">
-          <div className="col-6">
+          <div className="col-12 col-sm-6">
             <label className="form-label small text-secondary-label">Start Date</label>
             <input
               type="date"
@@ -61,7 +61,7 @@ const ExportPanel = ({ transactions }) => {
               onChange={(e) => setCustomStart(e.target.value)}
             />
           </div>
-          <div className="col-6">
+          <div className="col-12 col-sm-6">
             <label className="form-label small text-secondary-label">End Date</label>
             <input
               type="date"
@@ -73,14 +73,14 @@ const ExportPanel = ({ transactions }) => {
         </div>
       )}
 
-      <div className="d-flex align-items-center justify-content-between mt-3 pt-3 border-top border-separator">
-        <span className="small text-muted">
+      <div className="d-flex flex-column flex-sm-row align-items-sm-center justify-content-sm-between gap-3 mt-3 pt-3 border-top border-separator">
+        <span className="small text-muted text-center text-sm-start">
           Selected: <strong>{filteredCount}</strong> {filteredCount === 1 ? 'transaction' : 'transactions'}
         </span>
-        <div className="d-flex gap-2">
+        <div className="d-flex flex-column flex-sm-row gap-2 w-100 w-sm-auto justify-content-center justify-content-sm-end">
           <button
             type="button"
-            className="btn btn-sm btn-outline-theme d-flex align-items-center py-2 px-3 rounded-pill"
+            className="btn btn-sm btn-outline-theme d-flex align-items-center justify-content-center py-2 px-3 rounded-pill flex-fill flex-sm-grow-0"
             onClick={() => handleExport('csv')}
             disabled={filteredCount === 0}
           >
@@ -88,7 +88,7 @@ const ExportPanel = ({ transactions }) => {
           </button>
           <button
             type="button"
-            className="btn btn-sm btn-indigo d-flex align-items-center py-2 px-3 rounded-pill"
+            className="btn btn-sm btn-indigo d-flex align-items-center justify-content-center py-2 px-3 rounded-pill flex-fill flex-sm-grow-0"
             onClick={() => handleExport('pdf')}
             disabled={filteredCount === 0}
           >

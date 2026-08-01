@@ -93,7 +93,7 @@ const CreateForm = ({ onAdd, onUpdate, editable }) => {
   };
 
   return (
-    <div className="card p-4 shadow-sm mb-4 border-0">
+    <div className="card p-3 p-sm-4 shadow-sm mb-4 border-0">
       <h5 className="card-title mb-3 d-flex align-items-center">
         <svg className="me-2 text-indigo" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15"></path>
@@ -192,10 +192,10 @@ const CreateForm = ({ onAdd, onUpdate, editable }) => {
         </div>
 
         <div className="d-flex gap-2">
-          <button type="submit" className="btn btn-indigo flex-fill py-2 rounded-pill shadow-glow">
+          <button type="submit" className="btn btn-indigo flex-grow-1 py-2 rounded-pill shadow-glow">
             {editable ? 'Update' : 'Save Transaction'}
           </button>
-          <button type="button" className="btn btn-outline-theme px-3 rounded-pill" onClick={handleClear}>
+          <button type="button" className="btn btn-outline-theme flex-grow-1 flex-sm-grow-0 px-4 rounded-pill" onClick={handleClear}>
             Clear
           </button>
         </div>
