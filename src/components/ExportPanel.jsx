@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { filterTransactionsByRange, downloadCSV, downloadPDF } from '../utils/exportUtils';
 
-const ExportPanel = ({ transactions }) => {
+const ExportPanel = ({ transactions, trackerName }) => {
   const [rangeType, setRangeType] = useState('all');
   const [customStart, setCustomStart] = useState('');
   const [customEnd, setCustomEnd] = useState('');
@@ -9,9 +9,9 @@ const ExportPanel = ({ transactions }) => {
   const handleExport = (format) => {
     const filtered = filterTransactionsByRange(transactions, rangeType, customStart, customEnd);
     if (format === 'csv') {
-      downloadCSV(filtered, rangeType, customStart, customEnd);
+      downloadCSV(filtered, rangeType, customStart, customEnd, trackerName);
     } else {
-      downloadPDF(filtered, rangeType, customStart, customEnd);
+      downloadPDF(filtered, rangeType, customStart, customEnd, trackerName);
     }
   };
 

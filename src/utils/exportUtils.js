@@ -62,7 +62,7 @@ export const filterTransactionsByRange = (transactions, rangeType, customStart =
   });
 };
 
-export const downloadCSV = (filtered, rangeType, customStart, customEnd) => {
+export const downloadCSV = (filtered, rangeType, customStart, customEnd, trackerName = '') => {
   // Sort by date descending
   const sorted = [...filtered].sort((a, b) => new Date(b.date) - new Date(a.date));
 
@@ -92,13 +92,14 @@ export const downloadCSV = (filtered, rangeType, customStart, customEnd) => {
   const url = URL.createObjectURL(blob);
   const link = document.createElement('a');
   link.setAttribute('href', url);
-  link.setAttribute('download', `transactions_${rangeType}_${new Date().toISOString().split('T')[0]}.csv`);
+  const trackerSuffix = trackerName ? `_${trackerName.replace(/\s+/g, '_')}` : '';
+  link.setAttribute('download', `transactions${trackerSuffix}_${rangeType}_${new Date().toISOString().split('T')[0]}.csv`);
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
 };
 
-export const downloadPDF = (filtered, rangeType, customStart, customEnd) => {
+export const downloadPDF = (filtered, rangeType, customStart, customEnd, trackerName = '') => {
   // Sort by date descending
   const sorted = [...filtered].sort((a, b) => new Date(b.date) - new Date(a.date));
 
@@ -130,7 +131,8 @@ export const downloadPDF = (filtered, rangeType, customStart, customEnd) => {
     const e = customEnd || 'End';
     rangeText = `Custom Range (${s} to ${e})`;
   }
-  doc.text(`Statement Period: ${rangeText}`, 14, 33);
+  const profileText = trackerName ? `Profile: ${trackerName}  |  ` : '';
+  doc.text(`${profileText}Statement Period: ${rangeText}`, 14, 33);
 
   // Divider Line
   doc.setDrawColor(229, 231, 235);
@@ -205,5 +207,6 @@ export const downloadPDF = (filtered, rangeType, customStart, customEnd) => {
     }
   });
 
-  doc.save(`transactions_${rangeType}_${new Date().toISOString().split('T')[0]}.pdf`);
+  const trackerSuffix = trackerName ? `_${trackerName.replace(/\s+/g, '_')}` : '';
+  doc.save(`transactions${trackerSuffix}_${rangeType}_${new Date().toISOString().split('T')[0]}.pdf`);
 };
