@@ -122,18 +122,6 @@ function App() {
     localStorage.setItem("trackers", JSON.stringify(updatedTrackers));
   };
 
-  const moveTracker = (index, direction) => {
-    const targetIndex = index + direction;
-    if (targetIndex < 0 || targetIndex >= trackers.length) return;
-
-    const updated = [...trackers];
-    const temp = updated[index];
-    updated[index] = updated[targetIndex];
-    updated[targetIndex] = temp;
-
-    setTrackers(updated);
-    localStorage.setItem("trackers", JSON.stringify(updated));
-  };
 
   const handleDragStart = (e, index) => {
     setDraggedIndex(index);
@@ -383,34 +371,6 @@ function App() {
                               </h4>
                             </div>
                             <div className="d-flex gap-1 tracker-actions align-items-center">
-                              {index > 0 && (
-                                <button 
-                                  className="btn btn-link btn-sm text-secondary-label p-1"
-                                  onClick={(e) => {
-                                    e.stopPropagation();
-                                    moveTracker(index, -1);
-                                  }}
-                                  title="Move Left/Up"
-                                >
-                                  <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"></path>
-                                  </svg>
-                                </button>
-                              )}
-                              {index < trackers.length - 1 && (
-                                <button 
-                                  className="btn btn-link btn-sm text-secondary-label p-1"
-                                  onClick={(e) => {
-                                    e.stopPropagation();
-                                    moveTracker(index, 1);
-                                  }}
-                                  title="Move Right/Down"
-                                >
-                                  <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
-                                  </svg>
-                                </button>
-                              )}
                               <button 
                                 className="btn btn-link btn-sm text-secondary-label p-1"
                                 onClick={(e) => {
